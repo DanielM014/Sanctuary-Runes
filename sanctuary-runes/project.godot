@@ -1,0 +1,42 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Sanctuary Runes"
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="res://icon.svg"
+
+[input]
+
+izquierda={
+"deadzone": 0.2,
+"events": []
+}
+derecha={
+"deadzone": 0.2,
+"events": []
+}
+arriba={
+"deadzone": 0.2,
+"events": []
+}
+abajo={
+"deadzone": 0.2,
+"events": []
+}
+disparo={
+"deadzone": 0.2,
+"events": []
+}
+pausa={
+"deadzone": 0.2,
+"events": []
+}
