@@ -1,11 +1,30 @@
-[gd_scene format=3 uid="uid://gqq10j70feol"]
+[gd_scene load_steps=4 format=3 uid="uid://gqq10j70feol"]
+
+[ext_resource type="Script" uid="uid://n2ud4q34nc8u" path="res://scenes/player.gd" id="1_elqb8"]
+[ext_resource type="PackedScene" uid="uid://pobnxwfspndj" path="res://scenes/Projectile.tscn" id="2_rvslj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qnwvq"]
 
 [node name="Main" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
 
-[node name="Player" type="Node" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(87, 32)
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("1_elqb8")
+projectile_scene = ExtResource("2_rvslj")
+
+[node name="Polygon2D" type="Polygon2D" parent="Player"]
+color = Color(5.0055983e-06, 0.87528175, 0.87538624, 1)
+polygon = PackedVector2Array(-3, -5, 36, -4, 35, 26, -2, 26)
+uv = PackedVector2Array(-2, -4, 36, -4, 35, 26, 3, 27)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(15, 10)
+shape = SubResource("CircleShape2D_qnwvq")
 
 [node name="Spawner" type="Node" parent="."]
 
-[node name="HUD" type="Node" parent="."]
+[node name="HUD" type="CanvasLayer" parent="."]

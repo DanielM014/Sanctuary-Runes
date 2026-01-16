@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://pobnxwfspndj"]
+
+[ext_resource type="Script" uid="uid://tjdlqp885lt3" path="res://scenes/projectile.gd" id="1_dprbf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vihyi"]
+radius = 7.0
+
+[node name="Projectile" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_dprbf")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(1, -11)
+color = Color(0.78029007, 0, 0.031250335, 1)
+polygon = PackedVector2Array(1.8433185, 4.2132993, 1.5799873, 14.650204, 11.033444, 10.4567585)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, -1)
+shape = SubResource("CircleShape2D_vihyi")
